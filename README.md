@@ -10,3 +10,12 @@ $ crontab -l | docker run --rm -i -v $(pwd)/output:/output wizzn/cronv
 ```
 
 This will generate the `crontab.html` within your `$(pwd)/output` folder.
+
+### Development
+
+Create multi platform builds
+
+```shell
+$ docker buildx build -t wizzn/cronv:latest --platform linux/arm64,linux/amd64,linux/arm/v7,linux/arm/v6 --push .
+```
+
